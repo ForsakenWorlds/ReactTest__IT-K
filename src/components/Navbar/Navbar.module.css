@@ -1,0 +1,9 @@
+.navbar {
+    flex-basis: 20%;
+    background: rgba(0,212,255,1);
+    padding: 10px;
+}
+
+.item {
+  margin: 10px;
+}

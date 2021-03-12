@@ -1,0 +1,19 @@
+.dialogs {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.users {
+    border-right: 5px solid rgb(39, 118, 150);
+    flex-basis: 10%;
+}
+
+.user {
+    margin-bottom: 15px;
+}
+
+
+.messangers {
+    flex-basis: 70%;
+}
