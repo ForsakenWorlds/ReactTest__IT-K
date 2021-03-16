@@ -1,30 +1,30 @@
 import { NavLink } from "react-router-dom"
 import c from "./Dialogs.module.css"
+import DialogsItem from "./DialogsItem/DialogsItem";
+import Messange from "./Messange/Messange";
 
-const Messangers = () => {
+
+
+const Messangers = (props) => {
+    //userData massive
+    let userData = props.usersData.map((elem) => {
+        return <DialogsItem id={elem.id} name={elem.name} />
+    }
+    )
+
+    // messanges massive
+    let messanges = props.messangersData.map((m) => {
+        return <Messange messange={m.messange} />
+    })
+
+
     return (
         <div className={c.dialogs}>
             <div className={c.users}>
-                <div className={c.user}>
-                    <NavLink to="/messangers/1">Andrey</NavLink>
-                </div>
-                <div className={c.user}>
-                    <NavLink to="/messangers/2">Pavel</NavLink>
-                </div>
-                <div className={c.user}>
-                    <NavLink to="/messangers/3">Sonya</NavLink>
-                </div>
-                <div className={c.user}>
-                    <NavLink to="/messangers/4">Eduard</NavLink>
-                </div>
-                <div className={c.user}>
-                    <NavLink to="/messangers/5">Galina</NavLink>
-                </div>
+                {userData}
             </div>
             <div className={c.messangers}>
-                <div className={c.mesanger}>Hi!</div>
-                <div className={c.mesanger}>I teach React!!!</div>
-                <div className={c.mesanger}>It is amazing))</div>
+                {messanges}
             </div>
         </div>
     )

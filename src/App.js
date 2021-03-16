@@ -7,7 +7,7 @@ import Messangers from './components/Messangers/Dialogs';
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className="wraper">
@@ -15,10 +15,11 @@ function App() {
         <div className="flexBox">
           <Navbar />
           <div className="content">
-            <Route path="/profile" component={Profile} />
-            <Route exact path="/messangers" component={Messangers} />
-            {/* <Profile />
-            <Messangers /> */}
+            <Route path="/profile"
+              render={() => <Profile postsData={props.postsData} />} />
+
+            <Route exact path="/messangers"
+              render={() => <Messangers usersData={props.usersData} messangersData={props.messangersData} />} />
           </div>
         </div>
       </div>

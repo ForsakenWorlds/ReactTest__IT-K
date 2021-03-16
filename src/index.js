@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from "./redux/state"
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App postsData={state.postsData} usersData={state.usersData} messangersData={state.messangersData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
