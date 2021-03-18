@@ -1,7 +1,18 @@
+import React from "react";
+import { addPost } from "../../../redux/state";
 import c from "./ProfileInfo.module.css"
 
 
+
 const ProfileInfo = () => {
+
+    let newPref = React.createRef();
+
+    let addNewPost = () => {
+        let text = newPref.current.value;
+        addPost(text)
+    }
+
     return (
         <div>
             <div className={c.backgroundHeader}>
@@ -9,9 +20,9 @@ const ProfileInfo = () => {
             </div>
             <div>ava+description</div>
             <h3>My posts</h3>
-            <div className="textArea">
-                <textarea name="" id="" cols="30" rows="2"></textarea>
-                <button>Add post</button>
+            <div className="textArea" >
+                <textarea  ref={newPref}></textarea>
+                <button onClick={addNewPost}>Add post</button>
             </div>
         </div>
     )

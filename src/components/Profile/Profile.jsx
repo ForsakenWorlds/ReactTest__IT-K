@@ -21,7 +21,7 @@ const Profile = (props) => {
 
     return (
         <div className={c.profile}>
-            <ProfileInfo />
+            <ProfileInfo addPost={props.addPost}/>
             {posts}
         </div>
     )

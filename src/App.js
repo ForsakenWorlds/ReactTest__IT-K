@@ -16,10 +16,10 @@ function App(props) {
           <Navbar />
           <div className="content">
             <Route path="/profile"
-              render={() => <Profile postsData={props.postsData} />} />
+              render={() => <Profile postsData={props.state.profilePage.postsData} addPost={props.addPost}/>} />
 
             <Route exact path="/messangers"
-              render={() => <Messangers usersData={props.usersData} messangersData={props.messangersData} />} />
+              render={() => <Messangers usersData={props.state.messagePage.usersData} messangersData={props.state.messagePage.messangersData} />} />
           </div>
         </div>
       </div>
